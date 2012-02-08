@@ -4,7 +4,7 @@ Running Tests
 Usage
 -----
 
-	time unsortedtestgenerator <Number of Tests> <Max length of test case> <Max size of element> | bubblesort
+	time unsortedtestgenerator <Number of Tests> <Max length of test case> <Max size of element> | <algorithm binary>
 
 Example
 -------
