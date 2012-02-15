@@ -6,7 +6,8 @@
 #include <sstream>
 using namespace std; 
 
-#define INTWIDTH sizeof(int)*8-1
+int const INTWIDTH = sizeof(int)*8-1;
+
 int myAbs(int i);
 
 int main(int argc, const char* argv[]) {
