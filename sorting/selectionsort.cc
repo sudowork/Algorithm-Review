@@ -1,7 +1,7 @@
 /* Kevin Gao
  * Algorithm Review
  * 02/08/2012
- * Bubble Sort
+ * Selection Sort
  */
 #include <iostream>
 #include <string>
@@ -13,21 +13,22 @@ using namespace util;
 
 int main() {
 	std::string input;
-	std::cout << "Bubble Sort" << std::endl;
+	std::cout << "Selection Sort" << std::endl;
 	while (std::getline(std::cin,input)) {	 // Take input until eof
 		std::vector<int> v = split(input,' ');
 		printVector(v);
 		
-		// Bubble Sort
-		for(int i = 0; i < v.size(); i++) {
-			bool swap = false;
-			for (int j = 0; j < v.size()-(1+i); j++) {
-				if (v.at(j) > v.at(j+1)) {
-					swap = true;
-					vswap(v,j,j+1);
+		// Selection Sort
+		for (int i = 0; i < v.size(); i++) {
+			int min = v[i];
+			int minind = i;
+			for (int j = i+1; j < v.size(); j++) {
+				if (v[j] < min) {
+					min = v[j];
+					minind = j;
 				}
 			}
-			if (!swap) break;
+			if (minind != i) vswap(v,i,minind);
 		}
 
 		printVector(v);
